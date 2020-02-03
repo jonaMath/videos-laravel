@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Artisan;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -61,7 +63,7 @@ Route::get('/delete-video/{video_id}', array(
     'uses'=>'VideoController@delete'
 ));
 
-Route::get('/buscar/{search?}',[
+Route::get('/buscar/{search?}/{filter?}',[
     'as' => 'videoSearch',
     'uses' => 'VideoController@search'
 ]);
@@ -84,3 +86,8 @@ Route::get('/editar-video/{video_id}', array(
     'middleware' => 'auth',
     'uses'=>'VideoController@edit'
 ));
+//Ruta para borrar la cache de laravel
+
+Route::get('/clear-cache', function () {
+    $code = Artisan::call('cache:clear');
+});

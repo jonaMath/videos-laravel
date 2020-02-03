@@ -39,7 +39,7 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
                     </ul>
-                    <form action="" class="navbar-form navbar-left" role="search" action="">
+                    <form action="{{url('/buscar')}}" class="navbar-form navbar-left" role="search" action="">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="¿Qué quieres ver?" name="search">
                         </div>  
