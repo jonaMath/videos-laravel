@@ -155,6 +155,9 @@ class VideoController extends Controller
         if(is_null($search)){
             //recogemos lo que traiga la caja de la busqueda
             $search = \Request::get('search');
+            if(is_null($search)){
+                return redirect()->route('home');
+            }
             //redireccionamos correctamente
             return redirect()->route('videoSearch', array(
                 'search'=>$search

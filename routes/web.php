@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', array(
+Route::get('/', array(
     'as' => 'home',
     'uses' => 'HomeController@index'
 ));
@@ -86,6 +86,14 @@ Route::get('/editar-video/{video_id}', array(
     'middleware' => 'auth',
     'uses'=>'VideoController@edit'
 ));
+//users
+Route::get('/canal/{user_id}', array(
+    'as'=> 'channel',
+    'uses' => 'UserController@channel'
+));
+
+//ENDusers
+
 //Ruta para borrar la cache de laravel
 
 Route::get('/clear-cache', function () {
