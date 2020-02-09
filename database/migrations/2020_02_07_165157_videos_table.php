@@ -33,8 +33,6 @@ class VideosTable extends Migration
      */
     public function down()
     {
-        Schema::table('videos', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('videos');
     }
 }
