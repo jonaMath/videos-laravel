@@ -15,8 +15,8 @@ class VideosTable extends Migration
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->bigIncrements('id', 255);
-            $table->integer('user_id', 255);
-            //$table->foreign('user_id')->references('id')->on('users');
+            $table->integer('user_id', 255)->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('title', 255);
             $table->text('description');
             $table->string('status', 20);
