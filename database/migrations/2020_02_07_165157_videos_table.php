@@ -14,7 +14,7 @@ class VideosTable extends Migration
     public function up()
     {
         DB::statement('
-            CREATE TABLE videos(
+            CREATE TABLE videos (
                 id int(255) auto_increment not null,
                 user_id int(255),
                 title varchar(255),
@@ -26,8 +26,7 @@ class VideosTable extends Migration
                 updated_at datetime not null default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
                 PRIMARY KEY (id),
                 FOREIGN KEY (user_id) REFERENCES users(id)
-            )
-        
+            );
         ');
         /*
         Schema::create('videos', function (Blueprint $table) {
