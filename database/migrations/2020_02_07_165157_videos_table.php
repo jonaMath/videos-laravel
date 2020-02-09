@@ -13,7 +13,7 @@ class VideosTable extends Migration
      */
     public function up()
     {
-        Schema::table('videos', function (Blueprint $table) {
+        Schema::create('videos', function (Blueprint $table) {
             $table->bigIncrements('id', 255);
             $table->integer('user_id', 255);
             //$table->foreign('user_id')->references('id')->on('users');
