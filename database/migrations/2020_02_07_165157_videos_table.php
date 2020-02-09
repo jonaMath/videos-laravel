@@ -13,6 +13,7 @@ class VideosTable extends Migration
      */
     public function up()
     {
+        /*
         DB::statement('
             CREATE TABLE videos (
                 id int(255) auto_increment not null,
@@ -27,8 +28,8 @@ class VideosTable extends Migration
                 PRIMARY KEY (id),
                 FOREIGN KEY (user_id) REFERENCES users(id)
             );
-        ');
-        /*
+        ');*/
+        
         Schema::create('videos', function (Blueprint $table) {
             $table->increments('id', 255);
             $table->integer('user_id', 255)->unsigned();
@@ -39,7 +40,7 @@ class VideosTable extends Migration
             $table->string('image', 255);
             $table->string('video_path', 255);
             $table->timestamps();
-        });*/
+        });
     }
 
     /**
