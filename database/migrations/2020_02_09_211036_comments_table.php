@@ -16,7 +16,7 @@ class CommentsTable extends Migration
         Schema::table('comments', function (Blueprint $table) {
             $table->bigIncrements('id', 255);
             $table->integer('user_id', 255);
-            $table->foreign('user_id')->references('id')->on('users');
+            //$table->foreign('user_id')->references('id')->on('users');
             $table->integer('video_id', 255);
             $table->foreign('video_id')->references('id')->on('videos');
             $table->text('body');

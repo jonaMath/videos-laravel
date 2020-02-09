@@ -16,7 +16,7 @@ class VideosTable extends Migration
         Schema::table('videos', function (Blueprint $table) {
             $table->bigIncrements('id', 255);
             $table->integer('user_id', 255);
-            $table->foreign('user_id')->references('id')->on('users');
+            //$table->foreign('user_id')->references('id')->on('users');
             $table->string('title', 255);
             $table->text('description');
             $table->string('status', 20);
