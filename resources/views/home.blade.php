@@ -10,7 +10,7 @@
                 </div>
             @endif
 
-            @include('video.videosList');
+            @include('video.videosList')
         </div>  
     </div>
 </div>
