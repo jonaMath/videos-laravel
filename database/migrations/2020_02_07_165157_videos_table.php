@@ -13,6 +13,7 @@ class VideosTable extends Migration
      */
     public function up()
     {
+        //v
         Schema::create('videos', function (Blueprint $table) {
             $table->bigIncrements('id', 255);
             $table->integer('user_id', 255)->unsigned();
