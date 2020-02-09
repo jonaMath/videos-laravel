@@ -13,9 +13,25 @@ class VideosTable extends Migration
      */
     public function up()
     {
-        //v
+        DB::statement('
+            CREATE TABLE videos(
+                id int(255) auto_increment not null,
+                user_id int(255),
+                title varchar(255),
+                description text,                
+                status varchar(20),
+                image varchar(255),
+                video_path varchar(255),
+                created_at datetime not null default CURRENT_TIMESTAMP,
+                updated_at datetime not null default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                PRIMARY KEY (id),
+                FOREIGN KEY (user_id) REFERENCES users(id)
+            )
+        
+        ');
+        /*
         Schema::create('videos', function (Blueprint $table) {
-            $table->bigIncrements('id', 255);
+            $table->increments('id', 255);
             $table->integer('user_id', 255)->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('title', 255);
@@ -24,7 +40,7 @@ class VideosTable extends Migration
             $table->string('image', 255);
             $table->string('video_path', 255);
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
