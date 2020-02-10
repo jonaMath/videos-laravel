@@ -27,19 +27,19 @@ Route::get('/', array(
 Route::get('/crear-video',array(
     'as' => 'createVideo',
     'middleware' => 'auth',
-    'uses' => 'videoController@createVideo'
+    'uses' => 'VideoController@createVideo'
 ));
 
 Route::post('/guardar-video',array(
     'as' => 'saveVideo',
     'middleware' => 'auth',
-    'uses' => 'videoController@saveVideo'
+    'uses' => 'VideoController@saveVideo'
 ));
 
 Route::post('/update-video/{video_id}',array(
     'as' => 'updateVideo',
     'middleware' => 'auth',
-    'uses' => 'videoController@update'
+    'uses' => 'VideoController@update'
 ));
 
 Route::get('/miniatura/{filename}', array(

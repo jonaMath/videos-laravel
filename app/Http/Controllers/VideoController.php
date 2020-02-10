@@ -112,6 +112,7 @@ class VideoController extends Controller
             return redirect()->route('home');
         }
     }
+    
     public function update($video_id, Request $request){
         $validatedData = $this->validate($request, [
             'title'=> 'required|min:5',
@@ -192,7 +193,6 @@ class VideoController extends Controller
         }
         
         $videos = Video::where('title', 'LIKE', '%'.$search.'%')->orderBy($column,$order)->paginate(5);
-        
         
         return view('video.search', array(
             'videos'=> $videos,
